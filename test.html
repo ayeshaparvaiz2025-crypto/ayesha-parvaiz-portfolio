@@ -1191,6 +1191,8 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
 .wl-gal { margin-bottom: var(--s2); }
 .wl-pic { aspect-ratio: 900 / 640; }
 .wl-gal .amz-cap { flex-wrap: wrap; }
+.md-pic { aspect-ratio: 900 / 704; }
+.cs-body img[src*="cs/meadowline/02"] { max-width: 768px; margin-inline: auto; }
 </style>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -1448,7 +1450,9 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
           <h3>Colouring books</h3><p>Clean line-art colouring pages and covers for Amazon KDP and Etsy printables, for kids and adults.</p>
         </article>
         <article class="sp">
-          <div class="ill ill-tpl" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="amz-gal wl-gal">
+            <button class="amz-case" type="button" data-case="meadowline" data-name="Meadowline · Wedding invitation suite" data-title="Meadowline"><span class="amz-pic md-pic"><img src="img/meadowline-cover.jpg" width="900" height="703" alt="Meadowline fine-line botanical wedding invitation suite in sage and linen, sold on Etsy" loading="lazy"></span><span class="amz-cap"><b>Meadowline</b><em>Editable wedding invitation suite · Etsy</em></span></button>
+          </div>
           <h3>Digital templates</h3><p>Editable Canva templates to sell on Etsy: social media kits, planners, invitations, resumes and business cards.</p>
         </article>
       </div>
@@ -1724,7 +1728,7 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.min.js"></script>
 <script>
 const BH = "https://www.behance.net/gallery/";
-const CS = { "sti-phoenix": 8, "blubox-it": 8, "chicago-packers-and-movers": 9, "fashion-force": 8, "canny-tax": 8, "affordable-heating": 6, "chicago-cheap-movers": 9, "chicago-movers-near-me": 9, "fix-it-pro-dubai": 9, "neuralsip": 1, "miami-red": 1, "woodland-friends": 11 };
+const CS = { "sti-phoenix": 8, "blubox-it": 8, "chicago-packers-and-movers": 9, "fashion-force": 8, "canny-tax": 8, "affordable-heating": 6, "chicago-cheap-movers": 9, "chicago-movers-near-me": 9, "fix-it-pro-dubai": 9, "neuralsip": 1, "miami-red": 1, "woodland-friends": 11, "meadowline": 2 };
 const projects = [
   { n: "All Heating One", s: "all-heating-one", w: "UK", c: "home", d: "Heating, insulation and solar. Funding explainers, myth-busting posts, boiler offers and seasonal greetings.", p: ["#2B63C0", "#F59A23", "#9DBBEA"] },
   { n: "Affordable Heating", s: "affordable-heating", w: "UK", c: "home", d: "Heat pump, solar and EV charger posts plus Black Friday, Christmas and World Cup campaigns.", p: ["#EA6321", "#3C9322", "#F6B38F"] },
