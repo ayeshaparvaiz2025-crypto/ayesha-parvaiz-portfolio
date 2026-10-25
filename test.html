@@ -1215,6 +1215,10 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
 :root[data-theme="dark"] .btn-primary { background: linear-gradient(135deg, #9a1430 0%, #800020 60%, #6a0a22 100%); color: #fff9f2; }
 :root[data-theme="dark"] .top { background: color-mix(in srgb, #1A0F14 82%, transparent); }
 :root[data-theme="dark"] .ft b { color: #EE8A98; }
+/* ===== Viewers open in the browser top layer, above the custom cursor: use the normal cursor there ===== */
+html.has-cur:has(dialog[open]), html.has-cur:has(dialog[open]) * { cursor: auto !important; }
+html.has-cur:has(dialog[open]) dialog a, html.has-cur:has(dialog[open]) dialog button { cursor: pointer !important; }
+html:has(dialog[open]) .cur, html:has(dialog[open]) .cur-dot { opacity: 0 !important; }
 </style>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
