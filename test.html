@@ -1166,26 +1166,20 @@ footer { background: radial-gradient(50% 120% at 100% 0%, rgba(128, 0, 32, .55),
 .cta::before { opacity: .7; }
 @media (prefers-reduced-motion: reduce) { .tile, .pack, .rule, .faq-side, .me-card, .k-pal, .lines, .faq-grid details, .ft, .sp-wide, .files, .cta, .k-logo { animation: none !important; } }
 
-/* ===== Amazon listing case studies ===== */
-.amz-cases { margin-top: var(--s5); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
-.amz-cases-h { grid-column: 1 / -1; display: grid; gap: 8px; }
-.amz-cases-h h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 800; }
-.amz-case { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 12px; padding: 12px 12px 18px; border-radius: 22px; border: 1px solid var(--line); background: var(--surface); transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s; }
-.amz-case:hover, .amz-case:focus-visible { transform: translateY(-6px); box-shadow: 0 22px 44px rgba(42, 7, 16, .16); }
+/* ===== Amazon listing case studies, inside the Amazon product listing tile ===== */
+.amz-gal { display: grid; gap: 12px; min-width: 0; }
+.amz-case { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 8px; min-width: 0; border-radius: 16px; transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.amz-case:hover, .amz-case:focus-visible { transform: translateY(-4px); }
 .amz-case:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
-.amz-pic { display: block; overflow: hidden; border-radius: 14px; aspect-ratio: 900 / 612; position: relative; }
+.amz-pic { display: block; overflow: hidden; border-radius: 14px; aspect-ratio: 900 / 612; position: relative; box-shadow: 0 14px 30px rgba(42, 7, 16, .18); }
 .amz-pic img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2, .8, .2, 1); }
 .amz-case:hover .amz-pic img { transform: scale(1.05); }
-.amz-pic::after { content: "Open case study ↗"; position: absolute; right: 12px; bottom: 12px; background: #800020; color: #fff9f2; font: 600 .78rem var(--body); padding: 6px 12px; border-radius: 8px; opacity: 0; transform: translateY(6px); transition: .25s; }
+.amz-pic::after { content: "Open case study ↗"; position: absolute; right: 10px; bottom: 10px; background: #800020; color: #fff9f2; font: 600 .74rem var(--body); padding: 5px 10px; border-radius: 8px; opacity: 0; transform: translateY(6px); transition: .25s; }
 .amz-case:hover .amz-pic::after, .amz-case:focus-visible .amz-pic::after { opacity: 1; transform: none; }
-.amz-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding-inline: 4px; }
-.amz-meta b { font: 800 1.25rem var(--display); color: var(--ink); }
-.amz-meta em { font-style: normal; font-size: .85rem; color: var(--muted); }
-.amz-tags { display: flex; flex-wrap: wrap; gap: 6px; padding-inline: 4px; }
-.amz-tags i { font-style: normal; font-size: .74rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--tint); color: var(--ink); }
-@media (max-width: 760px) { .amz-cases { grid-template-columns: 1fr; } }
-:root[data-theme="dark"] .amz-case { background: var(--surface); border-color: var(--line); }
-:root[data-theme="dark"] .amz-meta b { color: #fff9f2; } :root[data-theme="dark"] .amz-tags i { background: #2a0b13; color: #f3e6d5; }
+.amz-cap { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding-inline: 2px; }
+.amz-cap b { font: 800 1rem var(--display); color: var(--ink); } .amz-cap em { font-style: normal; font-size: .8rem; color: var(--muted); }
+:root[data-theme="dark"] .amz-cap b { color: #fff9f2; }
+@media (hover: none) { .amz-pic::after { opacity: 1; transform: none; } }
 dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-red"] { max-width: 900px; margin-inline: auto; }
 </style>
 
@@ -1420,9 +1414,9 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
       </div>
       <div class="shop">
         <article class="sp sp-wide">
-          <div class="ill ill-amz" aria-hidden="true">
-            <div class="amz-main"><div class="prod"></div><span class="callout c1">Free shipping</span><span class="callout c2">100% cotton</span><span class="callout c3">Gift ready</span></div>
-            <div class="amz-thumbs"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+          <div class="amz-gal">
+            <button class="amz-case" type="button" data-case="neuralsip" data-name="NeuralSip · Amazon listing design" data-title="NeuralSip"><span class="amz-pic"><img src="img/neuralsip-cover.jpg" width="900" height="612" alt="NeuralSip smart bottle Amazon listing design case study" loading="lazy"></span><span class="amz-cap"><b>NeuralSip</b><em>Smart bottle</em></span></button>
+            <button class="amz-case" type="button" data-case="miami-red" data-name="Miami Red · Amazon listing design" data-title="Miami Red"><span class="amz-pic"><img src="img/miami-red-cover.jpg" width="900" height="612" alt="Miami Red wireless headphones Amazon listing design case study" loading="lazy"></span><span class="amz-cap"><b>Miami Red</b><em>Wireless headphones</em></span></button>
           </div>
           <div class="sp-txt"><h3>Amazon product listing images</h3><p>Main images, infographics, feature callouts, size charts and lifestyle mockups that follow Amazon's image guidelines and turn browsers into buyers.</p><div class="chips"><span>Main image</span><span>Infographics</span><span>Lifestyle</span><span>Size charts</span></div></div>
         </article>
@@ -1452,19 +1446,6 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
       <div class="etsy-list">
         <span class="lb">Popular Etsy digital products I design</span>
         <div class="chips"><span>Canva social media templates</span><span>Instagram post templates</span><span>Digital planners</span><span>Printable planners</span><span>Colouring pages</span><span>Kids activity books</span><span>Wedding invitations</span><span>Birthday invitations</span><span>Resume templates</span><span>Business card templates</span><span>Printable wall art</span><span>Sticker sheets</span><span>Etsy shop banners</span><span>Price lists &amp; menus</span><span>Ebook &amp; KDP covers</span></div>
-      </div>
-      <div class="amz-cases">
-        <div class="amz-cases-h"><span class="tag">Amazon listing case studies</span><h3>Full 7-image Amazon galleries, from one product photo.</h3></div>
-        <button class="amz-case" type="button" data-case="neuralsip" data-name="NeuralSip · Amazon listing design" data-title="NeuralSip">
-          <span class="amz-pic"><img src="img/neuralsip-cover.jpg" width="900" height="612" alt="NeuralSip smart bottle Amazon listing design case study cover" loading="lazy"></span>
-          <span class="amz-meta"><b>NeuralSip</b><em>Smart bottle · NeuralRaga</em></span>
-          <span class="amz-tags"><i>7 listing images</i><i>2000 × 2000</i><i>Retouching</i><i>Infographics</i></span>
-        </button>
-        <button class="amz-case" type="button" data-case="miami-red" data-name="Miami Red · Amazon listing design" data-title="Miami Red">
-          <span class="amz-pic"><img src="img/miami-red-cover.jpg" width="900" height="612" alt="Miami Red wireless headphones Amazon listing design case study cover" loading="lazy"></span>
-          <span class="amz-meta"><b>Miami Red</b><em>Wireless noise-cancelling headphones</em></span>
-          <span class="amz-tags"><i>7 listing images</i><i>2000 × 2000</i><i>Art direction</i><i>Infographics</i></span>
-        </button>
       </div>
     </div>
   </section>
