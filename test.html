@@ -1181,20 +1181,12 @@ footer { background: radial-gradient(50% 120% at 100% 0%, rgba(128, 0, 32, .55),
 :root[data-theme="dark"] .amz-cap b { color: #fff9f2; }
 @media (hover: none) { .amz-pic::after { opacity: 1; transform: none; } }
 dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-red"] { max-width: 900px; margin-inline: auto; }
-/* Amazon tile: NeuralSip on the left, Miami Red sits with the copy on the right */
-.sp-wide { align-items: start !important; }
-.sp-wide .sp-txt { align-content: start; gap: 12px; }
-.amz-side { margin-top: 8px; }
-@media (min-width: 601px) {
-  .sp-wide { align-items: start !important; align-content: center; grid-template-rows: auto auto auto auto; row-gap: 12px !important; }
-  .sp-wide .sp-txt { display: contents; }
-  .sp-wide .sp-txt > h3, .sp-wide .sp-txt > p, .sp-wide .sp-txt > .chips { grid-column: 1 / -1; margin: 0; }
-  .sp-wide .sp-txt > h3 { grid-row: 1; font-size: clamp(1.5rem, 2.4vw, 2rem); }
-  .sp-wide .sp-txt > p { grid-row: 2; max-width: 40em; }
-  .sp-wide .sp-txt > .chips { grid-row: 3; margin-bottom: var(--s2) !important; }
-  .sp-wide .amz-gal { grid-column: 1; grid-row: 4; align-self: start; }
-  .sp-wide .amz-side { grid-column: 2; grid-row: 4; margin-top: 0; align-self: start; }
-}
+/* Amazon tile: one big case study cover on top, copy below */
+.sp-wide { grid-template-columns: 1fr !important; align-content: start; align-items: start !important; gap: var(--s2) !important; }
+.sp-wide .amz-pic { aspect-ratio: 900 / 560; }
+.sp-wide .amz-cap { flex-wrap: wrap; }
+.sp-wide .sp-txt { gap: 10px; }
+
 </style>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -1429,9 +1421,9 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
       <div class="shop">
         <article class="sp sp-wide">
           <div class="amz-gal">
-            <button class="amz-case" type="button" data-case="neuralsip" data-name="NeuralSip · Amazon listing design" data-title="NeuralSip"><span class="amz-pic"><img src="img/neuralsip-cover.jpg" width="900" height="612" alt="NeuralSip smart bottle Amazon listing design case study" loading="lazy"></span><span class="amz-cap"><b>NeuralSip</b><em>Smart bottle</em></span></button>
+            <button class="amz-case" type="button" data-case="miami-red" data-name="Miami Red · Amazon listing design" data-title="Miami Red"><span class="amz-pic"><img src="img/miami-red-cover.jpg" width="900" height="612" alt="Miami Red wireless headphones Amazon listing design case study" loading="lazy"></span><span class="amz-cap"><b>Miami Red</b><em>Wireless noise-cancelling headphones</em></span></button>
           </div>
-          <div class="sp-txt"><h3>Amazon product listing images</h3><p>Main images, infographics, feature callouts, size charts and lifestyle mockups that follow Amazon's image guidelines and turn browsers into buyers.</p><div class="chips"><span>Main image</span><span>Infographics</span><span>Lifestyle</span><span>Size charts</span></div><button class="amz-case amz-side" type="button" data-case="miami-red" data-name="Miami Red · Amazon listing design" data-title="Miami Red"><span class="amz-pic"><img src="img/miami-red-cover.jpg" width="900" height="612" alt="Miami Red wireless headphones Amazon listing design case study" loading="lazy"></span><span class="amz-cap"><b>Miami Red</b><em>Wireless headphones</em></span></button></div>
+          <div class="sp-txt"><h3>Amazon product listing images</h3><p>Main images, infographics, feature callouts, size charts and lifestyle mockups that follow Amazon's image guidelines and turn browsers into buyers.</p><div class="chips"><span>Main image</span><span>Infographics</span><span>Lifestyle</span><span>Size charts</span></div></div>
         </article>
         <article class="sp">
           <div class="ill ill-aplus" aria-hidden="true"><i class="w"></i><i></i><i></i><i></i></div>
