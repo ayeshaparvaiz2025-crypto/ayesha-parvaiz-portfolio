@@ -1187,6 +1187,10 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
 .sp-wide .amz-cap { flex-wrap: wrap; }
 .sp-wide .sp-txt { gap: 10px; }
 
+/* Woodland Friends inside the Colouring books tile */
+.wl-gal { margin-bottom: var(--s2); }
+.wl-pic { aspect-ratio: 900 / 640; }
+.wl-gal .amz-cap { flex-wrap: wrap; }
 </style>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -1438,8 +1442,8 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
           <h3>Etsy listing photos</h3><p>Mockups, thumbnails and listing images that make your shop look premium in search.</p>
         </article>
         <article class="sp">
-          <div class="ill ill-color" aria-hidden="true">
-            <svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="60" cy="45" r="10"/><path d="M60 35c-6-14 6-22 0-30M60 35c6-14-6-22 0-30" /><ellipse cx="60" cy="22" rx="8" ry="14"/><ellipse cx="60" cy="68" rx="8" ry="14"/><ellipse cx="37" cy="45" rx="14" ry="8"/><ellipse cx="83" cy="45" rx="14" ry="8"/><ellipse cx="44" cy="29" rx="7" ry="12" transform="rotate(-45 44 29)"/><ellipse cx="76" cy="29" rx="7" ry="12" transform="rotate(45 76 29)"/><ellipse cx="44" cy="61" rx="7" ry="12" transform="rotate(45 44 61)"/><ellipse cx="76" cy="61" rx="7" ry="12" transform="rotate(-45 76 61)"/><path d="M8 84c20-8 30-8 52 0s32 8 52 0"/></svg>
+          <div class="amz-gal wl-gal">
+            <button class="amz-case" type="button" data-case="woodland-friends" data-name="Woodland Friends · Colouring storybook" data-title="Woodland Friends"><span class="amz-pic wl-pic"><img src="img/woodland-cover.jpg" width="900" height="640" alt="Woodland Friends: The Lost Star colouring storybook covers, bright and 3D versions" loading="lazy"></span><span class="amz-cap"><b>Woodland Friends</b><em>50-page story colouring book · ages 4–8</em></span></button>
           </div>
           <h3>Colouring books</h3><p>Clean line-art colouring pages and covers for Amazon KDP and Etsy printables, for kids and adults.</p>
         </article>
@@ -1720,7 +1724,7 @@ dialog.csd .cs-body img[src*="neuralsip"], dialog.csd .cs-body img[src*="miami-r
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.min.js"></script>
 <script>
 const BH = "https://www.behance.net/gallery/";
-const CS = { "sti-phoenix": 8, "blubox-it": 8, "chicago-packers-and-movers": 9, "fashion-force": 8, "canny-tax": 8, "affordable-heating": 6, "chicago-cheap-movers": 9, "chicago-movers-near-me": 9, "fix-it-pro-dubai": 9, "neuralsip": 1, "miami-red": 1 };
+const CS = { "sti-phoenix": 8, "blubox-it": 8, "chicago-packers-and-movers": 9, "fashion-force": 8, "canny-tax": 8, "affordable-heating": 6, "chicago-cheap-movers": 9, "chicago-movers-near-me": 9, "fix-it-pro-dubai": 9, "neuralsip": 1, "miami-red": 1, "woodland-friends": 11 };
 const projects = [
   { n: "All Heating One", s: "all-heating-one", w: "UK", c: "home", d: "Heating, insulation and solar. Funding explainers, myth-busting posts, boiler offers and seasonal greetings.", p: ["#2B63C0", "#F59A23", "#9DBBEA"] },
   { n: "Affordable Heating", s: "affordable-heating", w: "UK", c: "home", d: "Heat pump, solar and EV charger posts plus Black Friday, Christmas and World Cup campaigns.", p: ["#EA6321", "#3C9322", "#F6B38F"] },
