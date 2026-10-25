@@ -1088,7 +1088,6 @@ footer { background: radial-gradient(50% 120% at 100% 0%, rgba(128, 0, 32, .55),
   --bg: #140307; --surface: #1f060c; --tint: #2a0b13; --line: #3a1119; --ink: #fff9f2; --muted: #c9afa6;
   --brand: #d45060; --brand-deep: #e8909b; --on-brand: #1a0409; --dark: #0d0204; --on-dark: #fff9f2; --on-dark-muted: #d9c3b8;
   --v-50: #140307; --v-100: #2a0b13; --v-200: #3a1119; --v-900: #fff9f2;
-  --wine: #0d0204; --beige: #2a0b13; --cream: #fff9f2;
   color-scheme: dark;
 }
 :root[data-theme="dark"] body { background: var(--bg); color: #e3cfc6; }
@@ -1138,6 +1137,34 @@ footer { background: radial-gradient(50% 120% at 100% 0%, rgba(128, 0, 32, .55),
 :root[data-theme="dark"] .cta .tag { color: #f3e6d5 !important; }
 :root[data-theme="dark"] .k-logo .wordmark, :root[data-theme="dark"] .k-logo .wordmark b, :root[data-theme="dark"] .k-logo .lb { color: #fff9f2 !important; }
 :root[data-theme="dark"] .k-logo .mark { background: #fff9f2; color: #800020; }
+
+/* dark mode contrast fixes: cream text sits on burgundy, never on rose */
+:root[data-theme="dark"] .btn-primary { background: linear-gradient(135deg, #800020 0%, #a3233c 100%); background-size: 160% 100%; color: #fff9f2; }
+:root[data-theme="dark"] .vr .live-tag, :root[data-theme="dark"] .size { background: #800020 !important; color: #fff9f2 !important; }
+:root[data-theme="dark"] .pack .lbl, :root[data-theme="dark"] .tag { color: #f0a7b0; }
+:root[data-theme="dark"] .pack .lbl { background: #2a0b13; }
+:root[data-theme="dark"] .scale div:nth-child(3) { color: #2a0710 !important; }
+.vr .live-tag { background: #800020 !important; color: #fff9f2 !important; }
+.scale div:nth-child(3) { color: #2a0710 !important; }
+
+/* ===== Moving gradients inside boxes (both themes) ===== */
+:root { --mg-a: #ffffff; --mg-b: #fbefe4; --mg-c: #f6d9dd; --mg-d: #f1e2cf; --mg-x: #800020; --mg-y: #a3233c; --mg-z: #5c0017; }
+:root[data-theme="dark"] { --mg-a: #1f060c; --mg-b: #2c0b14; --mg-c: #41121d; --mg-d: #24080f; }
+@keyframes drift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.tile:not(.brand-t), .pack:not(.pop), .rule, .faq-side, .me-card, .k-pal, .lines, .faq-grid details, .ft, .tile.hero-t, .sp-wide, .files {
+  background: linear-gradient(120deg, var(--mg-a) 0%, var(--mg-b) 30%, var(--mg-c) 55%, var(--mg-d) 80%, var(--mg-a) 100%) !important;
+  background-size: 320% 320% !important; animation: drift 16s ease-in-out infinite;
+}
+.tile.hero-t, .sp-wide, .files { animation-duration: 22s; }
+.rule:nth-child(even), .tile:nth-child(even), .pack:nth-child(even) { animation-delay: -6s; }
+.rule:nth-child(3n), .tile:nth-child(3n) { animation-delay: -11s; }
+/* burgundy boxes breathe between burgundy and deep rose */
+.pack.pop, .tile.brand-t, .cta, .k-logo {
+  background: linear-gradient(130deg, var(--mg-z) 0%, var(--mg-x) 35%, var(--mg-y) 60%, var(--mg-x) 85%, var(--mg-z) 100%) !important;
+  background-size: 300% 300% !important; animation: drift 14s ease-in-out infinite;
+}
+.cta::before { opacity: .7; }
+@media (prefers-reduced-motion: reduce) { .tile, .pack, .rule, .faq-side, .me-card, .k-pal, .lines, .faq-grid details, .ft, .sp-wide, .files, .cta, .k-logo { animation: none !important; } }
 </style>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
